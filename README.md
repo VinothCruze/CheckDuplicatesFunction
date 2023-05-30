@@ -8,7 +8,7 @@ Function is present under [/src/check_duplicate.py](https://github.com/VinothCru
 ```
 from check_duplicate import check_duplicates
 
-result = check_duplicates(self.df, ['col_1', 'col_2', 'col_3'])
+result = check_duplicates(dataframe, ['col_1', 'col_2', 'col_3'])
 print(result)
 ```
 

@@ -1,7 +1,7 @@
 # CheckduplicateFunction
 
 Function to test the dataframe columns for duplicate values
-Function is present under /src/check_duplicate.py[here]https://raw.githubusercontent.com/VinothCruze/CheckDuplicatesFunction/main/src/check_duplicate.py
+Function is present under [/src/check_duplicate.py] https://raw.githubusercontent.com/VinothCruze/CheckDuplicatesFunction/main/src/check_duplicate.py
 
 
 ## Usage:

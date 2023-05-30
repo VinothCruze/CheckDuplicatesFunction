@@ -16,14 +16,17 @@ class TestDuplicate(unittest.TestCase):
         columns=['col_1', 'col_2', 'col_3', 'col_4'])
 
     def test_duplicate_1(self):
+        # test for the duplicate values with col1 and col2
         result = check_duplicates(self.df, ['col_1', 'col_2'])
         self.assertEqual(result['count'], 1)
 
     def test_duplicate_2(self):
+        # test for the duplicate values in col1
         result = check_duplicates(self.df, ['col_1'])
         self.assertEqual(result['count'], 5)
 
     def test_duplicate_3(self):
+        # test for the duplicate values with col1 col2 and col3
         result = check_duplicates(self.df, ['col_1', 'col_2', 'col_3'])
         self.assertEqual(result['count'], 0)
         

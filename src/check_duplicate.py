@@ -1,3 +1,25 @@
+# import libraries
+import pandas as pd
+import logging
+
+# dataframe definition
+df_1 = pd.DataFrame(
+data=[
+['A','a', 'x', 1],
+['A','b', 'x', 1],
+['A','c', 'x', 1],
+['B','a', 'x', 1],
+['B','b', 'x', 1],
+['B','c', 'x', 1],
+['A','a', 'y', 1],
+],
+columns=['col_1', 'col_2', 'col_3', 'col_4']
+)
+
+# Configure logging
+logging.basicConfig(filename='check_duplicates_log.log', level=logging.DEBUG)
+
+
 def check_duplicates(dataframe: pd.DataFrame, columns: list)-> dict:
   
 
@@ -18,8 +40,10 @@ def check_duplicates(dataframe: pd.DataFrame, columns: list)-> dict:
 
   # check if dataframe is of dataframe type and empty or not
   if not isinstance(dataframe, pd.DataFrame):
+    logging.error("Input must be a DataFrame")
     raise ValueError("Input must be a DataFrame")
   if dataframe.empty:
+    logging.error("Input DataFrame is empty")
     raise ValueError("Input DataFrame is empty")
   # check if provided column(s) arent empty
   if columns:
@@ -39,8 +63,16 @@ def check_duplicates(dataframe: pd.DataFrame, columns: list)-> dict:
       } 
       return result 
     else:
+      logging.error("The following column(s) are missing in the dataframe:{}, please check the provided input.".format(columns_undefined))
       raise ValueError("The following column(s) are missing in the dataframe:{}, please check the provided input.".format(columns_undefined))
   else:
+    logging.error("The provided column value is null.")
     raise ValueError("The provided column value is null.")
 
   
+if __name__ == "__main__":
+  print(check_duplicates(df_1, ['col_1']))
+  print(check_duplicates(df_1, ['col_1', 'col_2']))
+  print(check_duplicates(df_1, ['col_1', 'col_2', 'col_3']))
+
+    

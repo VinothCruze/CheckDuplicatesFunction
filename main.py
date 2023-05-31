@@ -16,8 +16,8 @@ df_1 = pd.DataFrame(
                 columns=['col_1', 'col_2', 'col_3', 'col_4']
                 )
 
-result_1 = check_duplicates(df1, ['col_1', 'col_2', 'col_3'])
-result_2 = check_duplicates(df1, ['col_1', 'col_2', 'col_3'])
+result_1 = check_duplicates(df1, ['col_1'])
+result_2 = check_duplicates(df1, ['col_1', 'col_2'])
 result_3 = check_duplicates(df1, ['col_1', 'col_2', 'col_3'])
 print(result_1)
 print(result_2)

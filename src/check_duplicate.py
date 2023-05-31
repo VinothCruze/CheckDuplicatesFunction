@@ -3,20 +3,6 @@ import pandas as pd
 import logging
 from typing import Union, Any
 
-# dataframe definition
-df_1 = pd.DataFrame(
-data=[
-['A','a', 'x', 1],
-['A','b', 'x', 1],
-['A','c', 'x', 1],
-['B','a', 'x', 1],
-['B','b', 'x', 1],
-['B','c', 'x', 1],
-['A','a', 'y', 1],
-],
-columns=['col_1', 'col_2', 'col_3', 'col_4']
-)
-
 # Configure logging
 logging.basicConfig(filename='check_duplicates_log.log', level=logging.DEBUG, filemode='w')
 

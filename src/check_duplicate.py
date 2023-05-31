@@ -39,9 +39,9 @@ def check_duplicates(dataframe: pd.DataFrame, columns: list) -> Union[ValueError
                 columns_undefined.append(col)
         if len(columns_undefined) == 0:
             # checking the count of duplicates
-            count = dataframe.duplicated(subset=columns, keep="first")
+            count = dataframe.duplicated(subset=columns, keep=False)
             # checking for the samples with group by count values
-            duplicate_values = dataframe[dataframe.duplicated(columns)].groupby(columns).size().reset_index(
+            duplicate_values = dataframe.groupby(columns).size().reset_index(
                 name='number_of_duplicates')
             result = {
                 'count': count.sum(),

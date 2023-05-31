@@ -24,13 +24,13 @@ print(result)
 ## Outputs:
 -- check_duplicates(dataframe, ['col_1'])
 ```
-           {'count': 5, 'samples': [{'col_1': 'A', 'number_of_duplicates': 3}, 
-                                    {'col_1': 'B', 'number_of_duplicates': 2}]}
+           {'count': 7, 'samples': [{'col_1': 'A', 'number_of_duplicates': 4}, 
+                                    {'col_1': 'B', 'number_of_duplicates': 3}]}
  ```
                                     
 -- check_duplicates(dataframe, ['col_1', 'col_2'])
 ```
-           {'count': 1, 'samples': [{'col_1': 'A', 'col_2': 'a', 'number_of_duplicates': 1}]}
+           {'count': 2, 'samples': [{'col_1': 'A', 'col_2': 'a', 'number_of_duplicates': 2}]}
            
 ```
            

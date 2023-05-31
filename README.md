@@ -7,7 +7,7 @@ Function is present under [/src/check_duplicate.py](https://github.com/VinothCru
 ## Usage:
 ```
 from check_duplicate import check_duplicates
-
+## define dataframe with column and values
 result = check_duplicates(dataframe, ['col_1', 'col_2', 'col_3'])
 print(result)
 ```

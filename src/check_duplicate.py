@@ -43,6 +43,7 @@ def check_duplicates(dataframe: pd.DataFrame, columns: list) -> Union[ValueError
             # checking for the samples with group by count values
             duplicate_values = dataframe.groupby(columns).size().reset_index(
                 name='number_of_duplicates')
+            duplicate_values = duplicate_values[duplicate_values['number_of_duplicates'] > 1]
             result = {
                 'count': count.sum(),
                 'samples': duplicate_values.to_dict('records')
